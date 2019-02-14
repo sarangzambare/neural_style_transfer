@@ -111,6 +111,23 @@ Finally, the cost is minimised by using gradient descent in the input image pixe
 For the purpose of demonstration, I use the activations from the [**vgg19 pre-trained model**](http://www.vlfeat.org/matconvnet/pretrained/#downloading-the-pre-trained-models). Given the meagre computing power I have on my old macintosh, I stick to images which are 400x300 in size. Here are some trippy images I was able to generate :
 
 
+### UC Berkeley Campanille Tower + Stranger Things UpsideDown World:
+
+![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/collage_camp.png)
+
+
+### Me and Friends + Trippy Art
+
+![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/collage_people.png)
+
+### Golden Gate Bridge + Trippy Art
+
+![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/collage_bridge.png)
+
+### Me + Trippy Art 
+
+![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/collage_me.png)
+
 
 ### References:
 
