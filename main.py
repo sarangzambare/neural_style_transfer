@@ -1,3 +1,5 @@
+# @author : Sarang Zambare, 2019
+# thanks to MatConvNet team for nst_utils
 import os
 import sys
 import scipy.io
@@ -85,8 +87,8 @@ def compute_layer_style_cost(a_S, a_G):
 
 
 STYLE_LAYERS = [
-    ('conv1_1', 0.2),
-    ('conv2_1', 0.2),
+    ('conv1_1', 0.4),
+    ('conv2_1', 0.3),
     ('conv3_1', 0.2),
     ('conv4_1', 0.2),
     ('conv5_1', 0.2)]
@@ -113,7 +115,7 @@ def compute_style_cost(model, STYLE_LAYERS):
         # Select the output tensor of the currently selected layer
         out = model[layer_name]
 
-        # Set a_S to be the hidden layer activation from the layer we have selected, by running the session on out
+        # Set a_S to be the hidden layer activation from the layer we have selected
         a_S = sess.run(out)
 
         # Set a_G to be the hidden layer activation from same layer. Here, a_G references model[layer_name]
@@ -123,13 +125,13 @@ def compute_style_cost(model, STYLE_LAYERS):
         # Compute style_cost for the current layer
         J_style_layer = compute_layer_style_cost(a_S, a_G)
 
-        # Add coeff * J_style_layer of this layer to overall style cost
+
         J_style += coeff * J_style_layer
 
     return J_style
 
 
-def total_cost(J_content, J_style, alpha = 10, beta = 40):
+def total_cost(J_content, J_style, alpha = 5, beta = 30):
     """
     Computes the total cost function
 
@@ -164,7 +166,7 @@ style_image = reshape_and_normalize_image(style_image)
 
 
 generated_image = generate_noise_image(content_image)
-imshow(generated_image[0])
+
 
 
 sess.run(model['input'].assign(content_image))
@@ -176,8 +178,7 @@ out = model['conv4_2']
 a_C = sess.run(out)
 
 # Set a_G to be the hidden layer activation from same layer. Here, a_G references model['conv4_2']
-# and isn't evaluated yet. Later in the code, we'll assign the image G as the model input, so that
-# when we run the session, this will be the activations drawn from the appropriate layer, with G as input.
+# and isn't evaluated yet.
 a_G = out
 
 # Compute the content cost
@@ -199,22 +200,22 @@ sess.run(model['input'].assign(style_image))
 
 J_style = compute_style_cost(model, STYLE_LAYERS)
 
-J = total_cost(J_content, J_style, alpha = 10, beta = 40)
+J = total_cost(J_content, J_style, alpha = 5, beta = 30)
 
-# define optimizer (1 line)
+# define optimizer with 2.0 as learning rate
 optimizer = tf.train.AdamOptimizer(2.0)
 
-# define train_step (1 line)
+# define train step as minimizing J
 train_step = optimizer.minimize(J)
 
 def model_nn(sess, input_image, num_iterations = 200):
 
-    # Initialize global variables (you need to run the session on the initializer)
+
 
     sess.run(tf.global_variables_initializer())
 
 
-    # Run the noisy input image (initial generated image) through the model. Use assign().
+
 
     sess.run(model['input'].assign(input_image))
 
@@ -248,4 +249,4 @@ def model_nn(sess, input_image, num_iterations = 200):
     return generated_image
 
 
-model_nn(sess, generated_image,num_iterations=2)
+model_nn(sess, generated_image,num_iterations=200)
