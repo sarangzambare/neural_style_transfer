@@ -71,3 +71,24 @@ One of the most well-accepted definition of style is the correlation of certain 
 Following this intuition, we can define the style of an image as a **matrix which captures the correlation of the channels of a layer with each other**. Formally, given the activations of layer **l** , the style matrix is given by :
 
 ![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/style_matrix.png)
+
+(Note: In mathematics, this is also defined as the [***Gramian Matrix***](https://en.wikipedia.org/wiki/Gramian_matrix) of the activations, hence we use the letter G)
+
+The elements of the G matrix would be higher if certain activations appear together, and would be lower if activations don't appear together, hence capturing the style of an image.
+
+Likewise, we can define style matrices for both the generated image and the style image. After that, we can define the distance (Frobenius norm) of the two matrices as our style cost.
+
+For a particular layer **l**, style cost is given by :
+
+
+![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/style_cost1.png)
+
+
+Where we define two style matrices for generated image and style image, indexed by the letters G and S respectively.
+
+To capture such correlations across patterns of all complexities, we sum this cost over all layers in the network, weighted by some parameter lambda. Hence the final style cost is given by :
+
+
+![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/style_cost2.png)
+
+Here, the lambdas denote the importance you want to give to each layer to define your style. 
