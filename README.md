@@ -68,7 +68,7 @@ Before moving to the question above, we must have a quantitative definition of w
 
 The one on the left is ***Starry Night by Van Gogh***, probably the most used example image for style transfer, and the right one is ***Starry Night by the Rhone***. I would say that the above images have similar style, (agreed that there is a subjective element involved). My brain is trained to notice broad similarities through decades of training, but how exactly do I define style ?
 
-One of the most well-accepted definition of style is the correlation of certain patterns with each other. For the above two images, I would characterize style as :
+One of the most well-accepted definition of style is the correlation of certain patterns with each other (due to [Gatys, Ecker, Bethge, Neural algorithm of artistic style](https://arxiv.org/abs/1508.06576)) For the above two images, I would characterize style as :
 
 **Blue wavy patterns and yellowish blots appearing together**
 
