@@ -1,5 +1,7 @@
 # neural style transfer
 
+## Author: Sarang Zambare
+
 
 Neural Style Transfer (NST) is probably the most fun (or trippy ?) applications of deep learning. The way it works is to mix the content of one image with the style of a different image.
 
