@@ -9,7 +9,6 @@ In this repo, I experiment with the common definitions of content and style, and
 
 ### CONTENT IMAGE + STYLE IMAGE = GENERATED IMAGE PHOTO HERE
 
-## Common ways to quantify content and style:
 
 To understand how to write down a mathematical equation for content and style of an image, we must first understand what do convolutional networks "see", especially what do the activations of various channels in the shallower and deeper layers correspond to.
 
@@ -30,3 +29,19 @@ AlexNet consists of 5 convolutional layers followed by 3 fully-connected layers.
 #### Layer 5:
 
 ![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/layer5.png)
+
+Notice that layer 2 is identifying complex patterns and layer 5 is identifying entire objects (even more complex).
+
+
+## Back to Style Transfer:
+
+The main idea behind neural style transfer is to define :
+1. Content cost : This is low when generated image is similar in content to the content image.
+2. Style cost: This is low when generated image has similar style to the style image.
+3. Total cost: A combination of the content and style costs which is minimised, using back-propagation over the input image.
+
+### Content Cost: How do you make sure that generated image matches the content image ?
+
+We saw earlier that various layers capture patterns of varying complexity from the input image. So it would make sense for two images with similar content to have similar activations for some layer ***l*** in the network. This ***l*** is chosen based on what aspect of the content image are being replicated. For example, if the content image has cats, and you want the generated image to have cats, then because cats are a significantly complex pattern, you would choose ***l*** to be deeper (more in value). Given that a layer is selected to represent content, the content cost can be defined as :
+
+![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/jcontent.png)
