@@ -133,6 +133,9 @@ For the purpose of demonstration, I use the activations from the [**vgg19 pre-tr
 ![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/collage_me.png)
 
 
+## Next step: Come up with my own versions of cost functions...
+
+
 ### References:
 
 1. [Zeiler, Fergus : Visualising and Understanding Convolutional Networks](https://arxiv.org/abs/1311.2901)
