@@ -62,4 +62,12 @@ Before moving to the question above, we must have a quantitative definition of w
 ![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/styles.JPG)
 
 
-The one on the left is ***Starry Night by Van Gogh***, probably the most used example image for style transfer, and the right one is ***Starry Night by the Rhone***. I would say that the above images have similar style, (agreed that there is a subjective element involved)
+The one on the left is ***Starry Night by Van Gogh***, probably the most used example image for style transfer, and the right one is ***Starry Night by the Rhone***. I would say that the above images have similar style, (agreed that there is a subjective element involved). My brain is trained to notice broad similarities through decades of training, but how exactly do I define style ?
+
+One of the most well-accepted definition of style is the correlation of certain patterns with each other. For the above two images, I would characterize style as :
+
+**Blue wavy patterns and yellowish blots appearing together**
+
+Following this intuition, we can define the style of an image as a **matrix which captures the correlation of the channels of a layer with each other**. Formally, given the activations of layer **l** , the style matrix is given by :
+
+![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/style_matrix.png)
