@@ -91,4 +91,9 @@ To capture such correlations across patterns of all complexities, we sum this co
 
 ![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/style_cost2.png)
 
-Here, the lambdas denote the importance you want to give to each layer to define your style. 
+Here, the lambdas denote the importance you want to give to each layer to define your style.
+
+Now that we have both the content cost and style cost, we can define the total cost function as :
+
+
+![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/total_cost.png)
