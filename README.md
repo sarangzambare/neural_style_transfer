@@ -56,3 +56,10 @@ Notice that the a<sup>(C)[l]</sup><sub>ijk</sub> correspond to the i,j,k <sup>th
 For a generated image which is similar in style to the content image, the above defined cost would be low.
 
 ### Style Cost: How do you make sure that generated image has the same style as the style image ?
+
+Before moving to the question above, we must have a quantitative definition of what is "Style" of an image. Consider the two images shown below :
+
+![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/styles.JPG)
+
+
+The one on the left is ***Starry Night by Van Gogh***, probably the most used example image for style transfer, and the right one is ***Starry Night by the Rhone***. I would say that the above images have similar style, (agreed that there is a subjective element involved)
