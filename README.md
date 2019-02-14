@@ -45,3 +45,6 @@ The main idea behind neural style transfer is to define :
 We saw earlier that various layers capture patterns of varying complexity from the input image. So it would make sense for two images with similar content to have similar activations for some layer ***l*** in the network. This ***l*** is chosen based on what aspect of the content image are being replicated. For example, if the content image has cats, and you want the generated image to have cats, then because cats are a significantly complex pattern, you would choose ***l*** to be deeper (more in value). Given that a layer is selected to represent content, the content cost can be defined as :
 
 ![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/jcontent.png)
+
+
+Notice that the a<sup>(C)[l]</sup><sub>ijk</sub> correspond to the i,j,k <sup>th</sup> element in the lth layer activation.  
