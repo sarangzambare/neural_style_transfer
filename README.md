@@ -47,8 +47,12 @@ We saw earlier that various layers capture patterns of varying complexity from t
 ![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/jcontent.png)
 
 
-Notice that the a<sup>(C)[l]</sup><sub>ijk</sub> correspond to the i,j,k <sup>th</sup> element in the l<sup>th</sup> layer activation, summed over the shape of the activation, which is given by :
+Notice that the a<sup>(C)[l]</sup><sub>ijk</sub> correspond to the i,j,k <sup>th</sup> element in the l<sup>th</sup> layer activation, summed over the shape of the activation, for the content image (similarly, G stands of generated image). The shape is given by:
 
 1. n<sub>h</sub> : height of the activation
 2. n<sub>w</sub> : width of the activation
 3. n<sub>c</sub> : number of channels for the activation, also equal to the number of filters used in the previous layer.  
+
+For a generated image which is similar in style to the content image, the above defined cost would be low.
+
+### Style Cost: How do you make sure that generated image has the same style as the style image ?
