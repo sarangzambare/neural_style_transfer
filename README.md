@@ -93,7 +93,27 @@ To capture such correlations across patterns of all complexities, we sum this co
 
 Here, the lambdas denote the importance you want to give to each layer to define your style.
 
+### Total cost and gradient descent :
+
 Now that we have both the content cost and style cost, we can define the total cost function as :
 
 
 ![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/total_cost.png)
+
+
+Finally, the cost is minimised by using gradient descent in the input image pixels space. Note that the **neural network does not get trained** in this process. The only things which are updated are the input image pixel values. That is, if G is the input image, then G is updated as :
+
+![alt text](https://raw.githubusercontent.com/sarangzambare/neural_style_transfer/master/png/update.png)
+
+
+## Some cool images generated:
+
+For the purpose of demonstration, I use the activations from the [**vgg19 pre-trained model**](http://www.vlfeat.org/matconvnet/pretrained/#downloading-the-pre-trained-models). Given the meagre computing power I have on my old macintosh, I stick to images which are 400x300 in size. Here are some trippy images I was able to generate :
+
+
+
+### References:
+
+1. [Zeiler, Fergus : Visualising and Understanding Convolutional Networks](https://arxiv.org/abs/1311.2901)
+2. [Alex Krizhevsky, AlexNet](http://www.image-net.org/challenges/LSVRC/2012/supervision.pdf)
+3. [Gatys, Ecker, Bethge, Neural algorithm of artistic style](https://arxiv.org/abs/1508.06576)
