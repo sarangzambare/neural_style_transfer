@@ -57,7 +57,7 @@ Notice that the a<sup>(C)[l]</sup><sub>ijk</sub> correspond to the i,j,k <sup>th
 2. n<sub>w</sub> : width of the activation
 3. n<sub>c</sub> : number of channels for the activation, also equal to the number of filters used in the previous layer.  
 
-For a generated image which is similar in style to the content image, the above defined cost would be low.
+For a generated image which is similar in content to the content image, the above defined cost would be low.
 
 ### Style Cost: How do you make sure that generated image has the same style as the style image ?
 
